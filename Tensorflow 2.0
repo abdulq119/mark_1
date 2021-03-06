@@ -1,1 +1,13 @@
 Tensor flow 2.0
+
+tensors are multi dimensional arrays and very similar to numpy arrays.
+
+A neural network can be represented as a graph made up of -
+  tensors
+  Computation nodes called neurons
+  
+They are directed acyclic graphs
+
+
+
+
