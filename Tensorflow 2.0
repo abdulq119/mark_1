@@ -19,6 +19,18 @@ In the backward pass, the NN uses the value calculated by GD to update the param
 GD in tensorflow 2.0 is calulated by a method called Auto Differentiation and uses the function tf.GradientTape()
 
 
+Keras basics - 
+Sequential API
+Functional API
+Model Subclassing
+Custom model
+
+Using Sequestial API in keras:
+
+
+**((separate topic -- what is validation loss - https://datascience.stackexchange.com/questions/37409/validation-loss))**
+
+
 
 
 
