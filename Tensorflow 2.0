@@ -31,6 +31,33 @@ Using Sequestial API in keras:
 **((separate topic -- what is validation loss - https://datascience.stackexchange.com/questions/37409/validation-loss))**
 
 
+Keras - Model components -
+Architecture
+Weights
+Optimizer
+Losses and Metrics
+
+
+CNN compponents -
+Convolution layer
+Pooling layer
+
+Convolution - 
+A sliding window function (also called a kernel) applied to an input matrix.
+A convolution result is called a Feature Map.
+A convolutional layer is a stack of feature maps of same size. Each feature map has different parameters which menas they extract different info from input image.
+
+Pooling - Subsample the output of convolutional layers by using a filter. In pooling layer, the filter does not have weights; it just applies an aggregation function (max, sum or avg).
+
+
+
+
+
+
+
+
+
+
 
 
 
