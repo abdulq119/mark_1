@@ -1,1 +1,29 @@
 
+pyspark - spark architecture - data shuffle - number of nodes - number of partitions - no.  of executers assigned
+
+columnar database - architecture and advantages over rdbms
+
+
+Spark 
+
+Driver program >> Worker Nodes >> Executors >> tasks
+
+the nuumber of partions = the number of tasks = no. of executors
+
+what is stage in Spark
+
+what is shuffle
+
+Some operations preserve partitioning, such as map, flatMap, filter, distinct, and so on. 
+Some operations repartition, such as reduceByKey, sortByKey, join, groupByKey, and so on.
+
+Summary
+Now let's summarize what we've learned in this Spark parallelize tutorial.
+
+RDDs are stored in the memory of Spark executor
+Java Virtual Machines, JVMs Data is split into partitions.
+Each partition in a separate executor RDD operations are executed on partitions in parallel
+Operations that depend on the same partition are pipelined together in stages.
+Operations that depend on multiple partitions are executed in separate stages.
+
+
