@@ -1,0 +1,3778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ================================================================
+         ================================================================
+         01. PAGE / WEBSITE SETTINGS
+         ================================================================
+
+         PURPOSE
+         -------
+         Basic browser settings and SEO information.
+
+         FOR THE WEBSITE OWNER
+         ---------------------
+         You normally only need to change:
+
+             - Page title
+             - Page description
+
+         Search for:
+
+             "PAGE / WEBSITE SETTINGS"
+
+         ================================================================
+         ================================================================ -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="ABC Manufacturing - Quality industrial products and manufacturing solutions.">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <title>ABC Manufacturing | Industrial Products</title>
+
+
+    <!-- ================================================================
+         ================================================================
+         02. CORPORATE DESIGN SYSTEM
+         ================================================================
+
+         PURPOSE
+         -------
+         All CSS is contained in this section.
+
+         NO EXTERNAL CSS LIBRARIES ARE USED.
+
+         The website does NOT use:
+
+             - Bootstrap
+             - Tailwind
+             - Material UI
+             - jQuery
+             - External icon libraries
+             - External fonts
+
+         This keeps the website lightweight and fast.
+
+         BRAND COLOURS
+         ------------
+
+         Change the following variables to change the website's
+         overall corporate colour scheme.
+
+             --color-primary
+             --color-primary-dark
+             --color-accent
+
+         ================================================================
+         ================================================================ -->
+
+    <style>
+
+        /* ==============================================================
+           CORPORATE COLOUR PALETTE
+           ============================================================== */
+
+        :root {
+
+            --color-primary: #123B63;
+
+            --color-primary-dark: #0B2D4D;
+
+            --color-accent: #1E73BE;
+
+            --color-accent-light: #EAF3FB;
+
+
+            --color-text: #17202A;
+
+            --color-muted: #64748B;
+
+            --color-light-text: #94A3B8;
+
+
+            --color-background: #F7F9FC;
+
+            --color-white: #FFFFFF;
+
+            --color-border: #E2E8F0;
+
+
+            --color-success: #15803D;
+
+
+            --container-width: 1180px;
+
+
+            --section-padding: 80px;
+
+
+            --radius-small: 6px;
+
+            --radius-medium: 10px;
+
+            --radius-large: 16px;
+
+
+            --shadow-small:
+                0 2px 8px rgba(15, 23, 42, 0.05);
+
+            --shadow-medium:
+                0 8px 30px rgba(15, 23, 42, 0.08);
+
+        }
+
+
+        /* ==============================================================
+           GLOBAL RESET
+           ============================================================== */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                var(--color-background);
+
+            color:
+                var(--color-text);
+
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        img {
+
+            display: block;
+
+            max-width: 100%;
+        }
+
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* ==============================================================
+           ACCESSIBILITY
+           ============================================================== */
+
+        :focus-visible {
+
+            outline:
+                3px solid
+                rgba(30, 115, 190, 0.35);
+
+            outline-offset: 3px;
+        }
+
+
+        .skip-link {
+
+            position: absolute;
+
+            left: -9999px;
+
+            top: 10px;
+
+            z-index: 9999;
+
+            padding: 10px 15px;
+
+            background:
+                var(--color-primary);
+
+            color: white;
+
+            border-radius: 5px;
+        }
+
+
+        .skip-link:focus {
+            left: 10px;
+        }
+
+
+        /* ==============================================================
+           REUSABLE LAYOUT
+           ============================================================== */
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--container-width)
+                );
+
+            margin-inline: auto;
+        }
+
+
+        .section {
+
+            padding:
+                var(--section-padding)
+                0;
+        }
+
+
+        .section-white {
+
+            background:
+                var(--color-white);
+        }
+
+
+        .section-header {
+
+            max-width: 720px;
+
+            margin:
+                0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .section-eyebrow {
+
+            margin-bottom: 8px;
+
+            color:
+                var(--color-accent);
+
+            font-size: 13px;
+
+            font-weight: 750;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-title {
+
+            margin:
+                0 0 12px;
+
+            color:
+                var(--color-primary);
+
+            font-size:
+                clamp(28px, 4vw, 38px);
+
+            line-height: 1.2;
+
+            letter-spacing:
+                -0.02em;
+        }
+
+
+        .section-description {
+
+            margin: 0;
+
+            color:
+                var(--color-muted);
+
+            font-size: 16px;
+        }
+
+
+        /* ==============================================================
+           BUTTONS
+           ============================================================== */
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 44px;
+
+            padding:
+                0 18px;
+
+            border:
+                1px solid transparent;
+
+            border-radius:
+                var(--radius-small);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                background-color .15s ease,
+                border-color .15s ease,
+                color .15s ease;
+        }
+
+
+        .btn-primary {
+
+            background:
+                var(--color-accent);
+
+            color:
+                white;
+        }
+
+
+        .btn-primary:hover {
+
+            background:
+                var(--color-primary);
+        }
+
+
+        .btn-secondary {
+
+            background:
+                white;
+
+            color:
+                var(--color-primary);
+
+            border-color:
+                var(--color-border);
+        }
+
+
+        .btn-secondary:hover {
+
+            border-color:
+                var(--color-primary);
+        }
+
+
+        /* ==============================================================
+           HEADER
+           ============================================================== */
+
+        .site-header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.97);
+
+            border-bottom:
+                1px solid
+                var(--color-border);
+        }
+
+
+        .header-inner {
+
+            min-height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color:
+                var(--color-primary);
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .brand-mark {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            background:
+                var(--color-primary);
+
+            color:
+                white;
+
+            font-size: 16px;
+
+            font-weight: 800;
+        }
+
+
+        .brand-name {
+            font-size: 17px;
+        }
+
+
+        .desktop-navigation {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            font-size: 14px;
+
+            font-weight: 650;
+        }
+
+
+        .desktop-navigation a {
+
+            color:
+                var(--color-muted);
+        }
+
+
+        .desktop-navigation a:hover {
+
+            color:
+                var(--color-primary);
+        }
+
+
+        /* ==============================================================
+           HERO
+           ============================================================== */
+
+        .hero {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                100px 0 95px;
+
+            background:
+                var(--color-primary);
+
+            color:
+                white;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            right: -200px;
+
+            top: -250px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 50%;
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 780px;
+        }
+
+
+        .hero-eyebrow {
+
+            margin-bottom: 15px;
+
+            color:
+                #A9D4F5;
+
+            font-size: 13px;
+
+            font-weight: 750;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .hero-title {
+
+            margin:
+                0 0 22px;
+
+            font-size:
+                clamp(38px, 6vw, 60px);
+
+            line-height: 1.08;
+
+            letter-spacing:
+                -.035em;
+        }
+
+
+        .hero-description {
+
+            max-width: 680px;
+
+            margin:
+                0 0 32px;
+
+            color:
+                #D9E7F3;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        .hero-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .hero .btn-primary {
+
+            background:
+                white;
+
+            color:
+                var(--color-primary);
+        }
+
+
+        .hero .btn-primary:hover {
+
+            background:
+                #F1F5F9;
+        }
+
+
+        .hero .btn-secondary {
+
+            background:
+                transparent;
+
+            color:
+                white;
+
+            border-color:
+                rgba(255,255,255,.3);
+        }
+
+
+        .hero .btn-secondary:hover {
+
+            background:
+                rgba(255,255,255,.08);
+        }
+
+
+        /* ==============================================================
+           COMPANY HIGHLIGHTS
+           ============================================================== */
+
+        .highlights {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .highlight {
+
+            padding: 24px;
+
+            background:
+                white;
+
+            border:
+                1px solid
+                var(--color-border);
+
+            border-radius:
+                var(--radius-medium);
+        }
+
+
+        .highlight-title {
+
+            margin-bottom: 5px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 15px;
+
+            font-weight: 750;
+        }
+
+
+        .highlight-text {
+
+            margin: 0;
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+        }
+
+
+        /* ==============================================================
+           PRODUCT CATALOGUE
+           ============================================================== */
+
+        .catalogue-toolbar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .filter-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .filter-button {
+
+            min-height: 38px;
+
+            padding:
+                0 15px;
+
+            background:
+                white;
+
+            color:
+                var(--color-muted);
+
+            border:
+                1px solid
+                var(--color-border);
+
+            border-radius: 20px;
+
+            font-size: 13px;
+
+            font-weight: 650;
+
+            cursor: pointer;
+        }
+
+
+        .filter-button:hover,
+        .filter-button.active {
+
+            background:
+                var(--color-primary);
+
+            color:
+                white;
+
+            border-color:
+                var(--color-primary);
+        }
+
+
+        .product-count {
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+
+            white-space: nowrap;
+        }
+
+
+        .product-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+
+        .product-card {
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background:
+                white;
+
+            border:
+                1px solid
+                var(--color-border);
+
+            border-radius:
+                var(--radius-medium);
+
+            box-shadow:
+                var(--shadow-small);
+        }
+
+
+        .product-image {
+
+            width: 100%;
+
+            height: 210px;
+
+            object-fit: cover;
+
+            background:
+                #F1F5F9;
+        }
+
+
+        /*
+            FALLBACK PRODUCT VISUAL
+
+            If no image is provided for a product, JavaScript
+            displays the product icon instead.
+        */
+
+        .product-image-placeholder {
+
+            height: 210px;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                #F1F5F9;
+
+            color:
+                var(--color-primary);
+
+            font-size: 52px;
+        }
+
+
+        .product-body {
+
+            display: flex;
+
+            flex: 1;
+
+            flex-direction: column;
+
+            padding: 20px;
+        }
+
+
+        .product-category {
+
+            margin-bottom: 7px;
+
+            color:
+                var(--color-accent);
+
+            font-size: 11px;
+
+            font-weight: 750;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+        }
+
+
+        .product-name {
+
+            margin:
+                0 0 8px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 18px;
+
+            line-height: 1.3;
+        }
+
+
+        .product-description {
+
+            margin:
+                0;
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================================================
+           ARTICLES / BLOG
+           ============================================================== */
+
+        .article-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 25px;
+        }
+
+
+        .article-card {
+
+            overflow: hidden;
+
+            background:
+                white;
+
+            border:
+                1px solid
+                var(--color-border);
+
+            border-radius:
+                var(--radius-medium);
+
+            box-shadow:
+                var(--shadow-small);
+        }
+
+
+        .article-image {
+
+            width: 100%;
+
+            height: 200px;
+
+            object-fit: cover;
+
+            background:
+                #F1F5F9;
+        }
+
+
+        .article-content {
+
+            padding: 22px;
+        }
+
+
+        .article-date {
+
+            margin-bottom: 8px;
+
+            color:
+                var(--color-accent);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: .06em;
+
+            text-transform: uppercase;
+        }
+
+
+        .article-title {
+
+            margin:
+                0 0 10px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 20px;
+
+            line-height: 1.3;
+        }
+
+
+        .article-summary {
+
+            margin:
+                0 0 18px;
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+        }
+
+
+        .article-link {
+
+            color:
+                var(--color-accent);
+
+            font-size: 13px;
+
+            font-weight: 750;
+        }
+
+
+        .article-link:hover {
+
+            color:
+                var(--color-primary);
+        }
+
+
+        /* ==============================================================
+           ARTICLE DETAIL VIEW
+           ==============================================================
+
+           This section is hidden until a visitor clicks
+           "Read Article".
+
+           The article is displayed without loading another page.
+
+           ============================================================== */
+
+        .article-reader {
+
+            display: none;
+
+            background:
+                white;
+
+            border-top:
+                1px solid
+                var(--color-border);
+        }
+
+
+        .article-reader.active {
+
+            display: block;
+        }
+
+
+        .article-reader-inner {
+
+            max-width: 850px;
+
+            margin:
+                0 auto;
+
+            padding:
+                60px 0;
+        }
+
+
+        .article-reader-image {
+
+            width: 100%;
+
+            max-height: 480px;
+
+            object-fit: cover;
+
+            margin:
+                25px 0 35px;
+
+            border-radius:
+                var(--radius-medium);
+        }
+
+
+        .article-reader-title {
+
+            margin:
+                0 0 10px;
+
+            color:
+                var(--color-primary);
+
+            font-size:
+                clamp(30px, 5vw, 46px);
+
+            line-height: 1.15;
+        }
+
+
+        .article-reader-meta {
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+        }
+
+
+        /*
+            ARTICLE BODY
+
+            This styling is intentionally generic.
+
+            It allows the website owner to paste normal HTML content
+            into the "content" field in the ARTICLE DATA section.
+
+            Supported content can include:
+
+                <p>
+                <h2>
+                <h3>
+                <ul>
+                <ol>
+                <strong>
+                <blockquote>
+                <a>
+                <img>
+        */
+
+        .article-body {
+
+            margin-top: 35px;
+
+            color:
+                #334155;
+
+            font-size: 16px;
+
+            line-height: 1.85;
+        }
+
+
+        .article-body h2 {
+
+            margin:
+                35px 0 12px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 26px;
+
+            line-height: 1.3;
+        }
+
+
+        .article-body h3 {
+
+            margin:
+                28px 0 10px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 21px;
+        }
+
+
+        .article-body p {
+
+            margin:
+                0 0 18px;
+        }
+
+
+        .article-body ul,
+        .article-body ol {
+
+            margin:
+                0 0 20px;
+
+            padding-left: 25px;
+        }
+
+
+        .article-body li {
+
+            margin-bottom: 8px;
+        }
+
+
+        .article-body blockquote {
+
+            margin:
+                25px 0;
+
+            padding:
+                18px 22px;
+
+            background:
+                var(--color-accent-light);
+
+            border-left:
+                4px solid
+                var(--color-accent);
+
+            color:
+                var(--color-primary);
+        }
+
+
+        .article-body img {
+
+            width: 100%;
+
+            height: auto;
+
+            margin:
+                25px 0;
+
+            border-radius:
+                var(--radius-medium);
+        }
+
+
+        .article-back {
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ==============================================================
+           CONTACT SECTION
+           ============================================================== */
+
+        .contact-section {
+
+            background:
+                var(--color-primary);
+
+            color:
+                white;
+        }
+
+
+        .contact-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 60px;
+
+            align-items: start;
+        }
+
+
+        .contact-title {
+
+            margin:
+                0 0 15px;
+
+            font-size:
+                clamp(30px, 5vw, 44px);
+
+            line-height: 1.15;
+        }
+
+
+        .contact-description {
+
+            max-width: 560px;
+
+            margin:
+                0 0 30px;
+
+            color:
+                #D9E7F3;
+
+            font-size: 16px;
+        }
+
+
+        .contact-details {
+
+            display: grid;
+
+            gap: 14px;
+        }
+
+
+        .contact-item {
+
+            display: flex;
+
+            gap: 12px;
+
+            color:
+                #D9E7F3;
+
+            font-size: 14px;
+        }
+
+
+        .contact-item-label {
+
+            min-width: 75px;
+
+            color:
+                white;
+
+            font-weight: 750;
+        }
+
+
+        .social-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+
+        .social-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            min-height: 38px;
+
+            padding:
+                0 14px;
+
+            background:
+                rgba(255,255,255,.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,.16);
+
+            border-radius: 6px;
+
+            color:
+                white;
+
+            font-size: 13px;
+
+            font-weight: 650;
+        }
+
+
+        .social-link:hover {
+
+            background:
+                rgba(255,255,255,.15);
+        }
+
+
+        .contact-card {
+
+            padding:
+                30px;
+
+            background:
+                white;
+
+            color:
+                var(--color-text);
+
+            border-radius:
+                var(--radius-large);
+        }
+
+
+        .contact-card-title {
+
+            margin:
+                0 0 10px;
+
+            color:
+                var(--color-primary);
+
+            font-size: 21px;
+        }
+
+
+        .contact-card-text {
+
+            margin:
+                0 0 20px;
+
+            color:
+                var(--color-muted);
+
+            font-size: 13px;
+        }
+
+
+        .contact-card .btn {
+
+            width: 100%;
+        }
+
+
+        /* ==============================================================
+           FOOTER
+           ============================================================== */
+
+        .site-footer {
+
+            padding:
+                35px 0;
+
+            background:
+                #081B2D;
+
+            color:
+                white;
+        }
+
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 30px;
+        }
+
+
+        .footer-company {
+
+            font-size: 18px;
+
+            font-weight: 800;
+        }
+
+
+        .footer-description {
+
+            max-width: 500px;
+
+            margin-top: 7px;
+
+            color:
+                #AFC2D3;
+
+            font-size: 13px;
+        }
+
+
+        .footer-contact {
+
+            justify-self: end;
+
+            color:
+                #D9E7F3;
+
+            font-size: 13px;
+
+            text-align: right;
+        }
+
+
+        .footer-bottom {
+
+            margin-top: 30px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.1);
+
+            color:
+                #8EA5B9;
+
+            font-size: 11px;
+        }
+
+
+        /* ==============================================================
+           RESPONSIVE DESIGN
+           ============================================================== */
+
+        @media (max-width: 1000px) {
+
+            .product-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .article-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .contact-layout {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            :root {
+
+                --section-padding:
+                    60px;
+            }
+
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 30px),
+                        var(--container-width)
+                    );
+            }
+
+
+            .desktop-navigation {
+
+                display: none;
+            }
+
+
+            .hero {
+
+                padding:
+                    70px 0;
+            }
+
+
+            .hero-title {
+
+                font-size: 40px;
+            }
+
+
+            .hero-description {
+
+                font-size: 16px;
+            }
+
+
+            .highlights {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .catalogue-toolbar {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .product-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .article-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .article-reader-inner {
+
+                width:
+                    min(
+                        calc(100% - 30px),
+                        850px
+                    );
+
+                padding:
+                    45px 0;
+            }
+
+
+            .footer-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-contact {
+
+                justify-self: start;
+
+                text-align: left;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================================================
+         03. ACCESSIBILITY
+         ================================================================ -->
+
+    <a
+        class="skip-link"
+        href="#main-content">
+
+        Skip to main content
+
+    </a>
+
+
+    <!-- ================================================================
+         04. HEADER / NAVIGATION
+         ================================================================
+
+         The visible company name is automatically populated from
+         WEBSITE_CONFIG.
+
+         To change the company name, search:
+
+             "COMPANY INFORMATION"
+
+         ================================================================ -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <a
+                class="brand"
+                href="#home"
+                aria-label="Homepage">
+
+                <span
+                    class="brand-mark"
+                    id="brandMark">
+
+                    A
+
+                </span>
+
+
+                <span
+                    class="brand-name"
+                    id="headerCompanyName">
+
+                    ABC Manufacturing
+
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Main navigation">
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#articles">
+                    Articles
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a
+                class="btn btn-primary"
+                href="#contact">
+
+                Contact Us
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main id="main-content">
+
+
+        <!-- ============================================================
+             05. HERO
+             ============================================================ -->
+
+        <section
+            class="hero"
+            id="home">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+
+                    <div
+                        class="hero-eyebrow"
+                        id="heroEyebrow">
+
+                        Industrial Manufacturing
+
+                    </div>
+
+
+                    <h1
+                        class="hero-title"
+                        id="heroTitle">
+
+                        Quality Products.
+                        Reliable Manufacturing.
+
+                    </h1>
+
+
+                    <p
+                        class="hero-description"
+                        id="heroDescription">
+
+                        Quality industrial products manufactured
+                        for businesses that value reliability,
+                        consistency and competitive pricing.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            class="btn btn-primary"
+                            href="#products">
+
+                            Explore Products
+
+                        </a>
+
+
+                        <a
+                            class="btn btn-secondary"
+                            href="#contact">
+
+                            Contact Us
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================================================
+             06. COMPANY HIGHLIGHTS
+             ============================================================ -->
+
+        <section
+            class="section section-white">
+
+            <div class="container">
+
+                <div class="highlights">
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-title">
+                            Quality Focused
+                        </div>
+
+                        <p class="highlight-text">
+
+                            Consistent manufacturing standards
+                            across every product.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-title">
+                            Reliable Supply
+                        </div>
+
+                        <p class="highlight-text">
+
+                            Products designed to support
+                            ongoing business requirements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-title">
+                            Customer Focused
+                        </div>
+
+                        <p class="highlight-text">
+
+                            Direct communication and support
+                            for business customers.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================================================
+             07. PRODUCT CATALOGUE
+             ============================================================
+
+             Products are automatically generated from:
+
+                 WEBSITE_CONFIG.products
+
+             To add a product, search:
+
+                 "PRODUCT CATALOGUE DATA"
+
+             ============================================================ -->
+
+        <section
+            class="section"
+            id="products">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <div class="section-eyebrow">
+                        Our Products
+                    </div>
+
+
+                    <h2 class="section-title">
+                        Product Catalogue
+                    </h2>
+
+
+                    <p class="section-description">
+
+                        Explore our range of industrial and
+                        commercial products.
+
+                    </p>
+
+                </div>
+
+
+                <div class="catalogue-toolbar">
+
+
+                    <div
+                        class="filter-list"
+                        id="categoryFilters">
+                    </div>
+
+
+                    <div
+                        class="product-count"
+                        id="productCount">
+
+                        0 products
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product-grid"
+                    id="productGrid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================================================
+             08. ARTICLES / BLOG
+             ============================================================
+
+             Article cards are automatically created from:
+
+                 WEBSITE_CONFIG.articles
+
+             To add an article, search:
+
+                 "ARTICLE / BLOG DATA"
+
+             ============================================================ -->
+
+        <section
+            class="section section-white"
+            id="articles">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <div class="section-eyebrow">
+                        Knowledge Centre
+                    </div>
+
+
+                    <h2 class="section-title">
+                        Articles & Insights
+                    </h2>
+
+
+                    <p class="section-description">
+
+                        Industry insights, product information,
+                        manufacturing knowledge and company updates.
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="article-grid"
+                    id="articleGrid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================================================
+             09. ARTICLE READER
+             ============================================================
+
+             PURPOSE
+             -------
+             Displays the complete article when a visitor clicks
+             "Read Article".
+
+             It works without loading another webpage.
+
+             ============================================================ -->
+
+        <section
+            class="article-reader"
+            id="articleReader">
+
+            <div class="container">
+
+                <div class="article-reader-inner">
+
+
+                    <button
+                        class="btn btn-secondary article-back"
+                        type="button"
+                        id="articleBackButton">
+
+                        ← Back to Articles
+
+                    </button>
+
+
+                    <div
+                        class="section-eyebrow"
+                        id="readerCategory">
+
+                        Article
+
+                    </div>
+
+
+                    <h1
+                        class="article-reader-title"
+                        id="readerTitle">
+
+                    </h1>
+
+
+                    <div
+                        class="article-reader-meta"
+                        id="readerDate">
+
+                    </div>
+
+
+                    <img
+                        class="article-reader-image"
+                        id="readerImage"
+                        src=""
+                        alt="">
+
+
+                    <div
+                        class="article-body"
+                        id="readerContent">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================================================
+             10. CONTACT US
+             ============================================================
+
+             Contact information is automatically populated from:
+
+                 WEBSITE_CONFIG.contact
+
+             Search:
+
+                 "CONTACT INFORMATION"
+
+             ============================================================ -->
+
+        <section
+            class="section contact-section"
+            id="contact">
+
+            <div class="container">
+
+                <div class="contact-layout">
+
+
+                    <!-- LEFT SIDE -->
+
+                    <div>
+
+                        <div class="section-eyebrow">
+                            Get In Touch
+                        </div>
+
+
+                        <h2 class="contact-title">
+                            Contact Us
+                        </h2>
+
+
+                        <p
+                            class="contact-description"
+                            id="contactDescription">
+
+                            We would be happy to discuss your
+                            product requirements and business needs.
+
+                        </p>
+
+
+                        <div class="contact-details">
+
+
+                            <div class="contact-item">
+
+                                <span class="contact-item-label">
+                                    Phone
+                                </span>
+
+                                <a
+                                    id="contactPhone"
+                                    href="#">
+
+                                    +91 98765 43210
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <span class="contact-item-label">
+                                    Email
+                                </span>
+
+                                <a
+                                    id="contactEmail"
+                                    href="#">
+
+                                    sales@example.com
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="contact-item">
+
+                                <span class="contact-item-label">
+                                    Address
+                                </span>
+
+                                <span id="contactAddress">
+
+                                    India
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SOCIAL MEDIA LINKS -->
+
+                        <div
+                            class="social-links"
+                            id="socialLinks">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT SIDE -->
+
+                    <div class="contact-card">
+
+                        <h3 class="contact-card-title">
+
+                            Have a requirement?
+
+                        </h3>
+
+
+                        <p class="contact-card-text">
+
+                            Contact our team directly using
+                            the details provided. We will be
+                            happy to discuss your requirements.
+
+                        </p>
+
+
+                        <a
+                            class="btn btn-primary"
+                            id="emailContactButton"
+                            href="#">
+
+                            Send Us an Email
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================================================
+         11. FOOTER
+         ================================================================ -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <div
+                        class="footer-company"
+                        id="footerCompanyName">
+
+                        ABC Manufacturing
+
+                    </div>
+
+
+                    <div
+                        class="footer-description"
+                        id="footerDescription">
+
+                        Quality industrial products and
+                        reliable manufacturing.
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-contact">
+
+                    <div>
+
+                        <strong>Email:</strong>
+
+                        <span id="footerEmail">
+                            sales@example.com
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>Phone:</strong>
+
+                        <span id="footerPhone">
+                            +91 98765 43210
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                ©
+                <span id="footerYear">
+                    2026
+                </span>
+
+                <span id="footerCopyrightName">
+                    ABC Manufacturing
+                </span>
+
+                . All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================================================
+         ================================================================
+         12. JAVASCRIPT
+         ================================================================
+         ================================================================ -->
+
+
+    <script>
+
+
+        /* ==============================================================
+           ==============================================================
+           BUSINESS CONFIGURATION
+           ==============================================================
+           
+           ███████████████████████████████████████████████████████████
+           
+           WEBSITE OWNER:
+           
+           THIS IS THE MOST IMPORTANT SECTION OF THE ENTIRE WEBSITE.
+           
+           ███████████████████████████████████████████████████████████
+
+
+           You should be able to operate most of the website by
+           editing only this section.
+
+
+           This section contains:
+
+               1. Company information
+               2. Homepage content
+               3. Product catalogue
+               4. Article / blog content
+               5. Contact information
+               6. Social media links
+
+
+           ==============================================================
+           ============================================================== */
+
+
+        const WEBSITE_CONFIG = {
+
+
+            /* ==========================================================
+               ==========================================================
+               COMPANY INFORMATION
+               ==========================================================
+               
+               CHANGE THESE VALUES TO YOUR COMPANY DETAILS.
+
+               ==========================================================
+               ========================================================== */
+
+            company: {
+
+                name:
+                    "Intellect Engineering Company",
+
+                shortName:
+                    "I",
+
+                description:
+                    "Quality industrial products and reliable manufacturing for business customers."
+
+            },
+
+
+            /* ==========================================================
+               ==========================================================
+               HOMEPAGE CONTENT
+               ==========================================================
+               
+               This controls the large banner at the top of the page.
+
+               ==========================================================
+               ========================================================== */
+
+            homepage: {
+
+                eyebrow:
+                    "Industrial Manufacturing",
+
+                title:
+                    "Energy Saving. Intellectually!",
+
+                description:
+                    "Quality industrial products manufactured for businesses that value reliability, consistency and competitive pricing."
+
+            },
+
+
+            /* ==========================================================
+               ==========================================================
+               PRODUCT CATALOGUE DATA
+               ==========================================================
+               
+               ███████████████████████████████████████████████████████
+               
+               THIS IS WHERE PRODUCTS ARE ADDED.
+               
+               ███████████████████████████████████████████████████████
+
+
+               HOW TO ADD A PRODUCT
+               --------------------
+
+               Copy the following structure:
+
+               {
+                   name: "Product Name",
+                   category: "Category",
+                   price: 100,
+                   unit: "piece",
+                   image: "images/product-name.webp",
+                   icon: "◆",
+                   description: "Product description."
+               }
+
+
+               FIELD EXPLANATION
+               -----------------
+
+               name
+                   Name shown to customers.
+
+
+               category
+                   Category used by the catalogue filter.
+
+
+               price
+                   Optional indicative price.
+
+                   If you do not want to show prices,
+                   you can remove the price display from
+                   the product template.
+
+
+               unit
+                   Examples:
+
+                       piece
+                       kg
+                       box
+                       set
+                       metre
+
+
+               image
+                   Path to product image.
+
+                   Example:
+
+                       images/bucket.webp
+
+                   The image should be placed inside:
+
+                       images/
+
+                   folder.
+
+
+               icon
+                   Fallback symbol displayed if no image exists.
+
+
+               description
+                   Short description shown on the catalogue card.
+
+
+               ========================================================== */
+
+
+            products: [
+
+
+                {
+                    name:
+                        "APFC Panel",
+
+                    category:
+                        "Panels",
+
+                    price:
+                        120,
+
+                    unit:
+                        "piece",
+
+                    image:
+                        "images/industrial-bucket.webp",
+
+                    icon:
+                        "▣",
+
+                    description:
+                        "Smart, automated power factor correction panels designed for industrial energy efficiency."
+
+                },
+
+
+                {
+                    name:
+                        "Hex Nut & Bolt",
+
+                    category:
+                        "Hardware",
+
+                    price:
+                        4,
+
+                    unit:
+                        "piece",
+
+                    image:
+                        "images/nut-bolt.webp",
+
+                    icon:
+                        "◆",
+
+                    description:
+                        "Precision manufactured nuts and bolts for general industrial applications."
+
+                },
+
+
+                {
+                    name:
+                        "Machine Component",
+
+                    category:
+                        "Industrial",
+
+                    price:
+                        500,
+
+                    unit:
+                        "piece",
+
+                    image:
+                        "images/machine-component.webp",
+
+                    icon:
+                        "⚙",
+
+                    description:
+                        "Custom-machined metal component manufactured according to specification."
+
+                },
+
+
+                {
+                    name:
+                        "Storage Container",
+
+                    category:
+                        "Plastic",
+
+                    price:
+                        180,
+
+                    unit:
+                        "piece",
+
+                    image:
+                        "images/storage-container.webp",
+
+                    icon:
+                        "□",
+
+                    description:
+                        "Durable storage container available in multiple sizes and configurations."
+
+                }
+
+            ],
+
+
+            /* ==========================================================
+               ==========================================================
+               ARTICLE / BLOG DATA
+               ==========================================================
+               
+               ███████████████████████████████████████████████████████
+               
+               THIS IS WHERE ARTICLES ARE CREATED.
+               
+               ███████████████████████████████████████████████████████
+
+
+               HOW TO ADD AN ARTICLE
+               ---------------------
+
+               Copy the structure below:
+
+               {
+                   title: "Article Title",
+
+                   category: "Industry",
+
+                   date: "31 August 2026",
+
+                   image: "images/article-image.webp",
+
+                   summary:
+                       "Short description shown on article card.",
+
+                   content: `
+                       
+                       <p>
+                           Your article begins here.
+                       </p>
+
+                       <h2>
+                           Your Heading
+                       </h2>
+
+                       <p>
+                           More content...
+                       </p>
+
+                   `
+               }
+
+
+               IMPORTANT
+               ---------
+
+               The "content" field accepts HTML.
+
+               This means the owner can create properly formatted
+               articles using:
+
+                   <p>Paragraph</p>
+
+                   <h2>Heading</h2>
+
+                   <h3>Subheading</h3>
+
+                   <strong>Bold text</strong>
+
+                   <ul>
+                       <li>Bullet point</li>
+                       <li>Bullet point</li>
+                   </ul>
+
+                   <ol>
+                       <li>Step one</li>
+                       <li>Step two</li>
+                   </ol>
+
+                   <blockquote>
+                       Important statement
+                   </blockquote>
+
+
+               ADDING AN IMAGE INSIDE AN ARTICLE
+               ---------------------------------
+
+               Use:
+
+                   <img
+                       src="images/my-image.webp"
+                       alt="Description of image"
+                       loading="lazy"
+                   >
+
+
+               IMPORTANT FOR IMAGES
+               --------------------
+
+               Put all website images in:
+
+                   images/
+
+               Example:
+
+                   website/
+                   │
+                   ├── index.html
+                   │
+                   └── images/
+                       ├── industrial-bucket.webp
+                       ├── nut-bolt.webp
+                       ├── article-1.webp
+                       └── article-2.webp
+
+
+               ========================================================== */
+
+
+            articles: [
+
+
+                {
+                    title:
+                        "How Quality Manufacturing Improves Product Reliability",
+
+                    category:
+                        "Manufacturing",
+
+                    date:
+                        "31 August 2026",
+
+                    image:
+                        "images/article-quality-manufacturing.webp",
+
+                    summary:
+                        "Understanding the importance of manufacturing quality, process consistency and reliable production standards.",
+
+                    content: `
+
+                        <p>
+                            Manufacturing quality plays an important role
+                            in determining the reliability and long-term
+                            performance of industrial products.
+                        </p>
+
+
+                        <h2>
+                            Why Manufacturing Quality Matters
+                        </h2>
+
+
+                        <p>
+                            Consistent manufacturing processes help ensure
+                            that products meet expected specifications
+                            across different production batches.
+                        </p>
+
+
+                        <h2>
+                            Process Consistency
+                        </h2>
+
+
+                        <p>
+                            Standardised processes reduce variation and
+                            help manufacturers maintain predictable product
+                            quality.
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Consistent raw material selection
+                            </li>
+
+                            <li>
+                                Standardised production processes
+                            </li>
+
+                            <li>
+                                Regular quality inspection
+                            </li>
+
+                            <li>
+                                Proper documentation
+                            </li>
+
+                        </ul>
+
+
+                        <h2>
+                            Conclusion
+                        </h2>
+
+
+                        <p>
+                            A strong focus on quality throughout the
+                            manufacturing process ultimately helps
+                            businesses deliver more reliable products
+                            to their customers.
+                        </p>
+
+                    `
+
+                },
+
+
+                {
+                    title:
+                        "Choosing the Right Industrial Components",
+
+                    category:
+                        "Industry",
+
+                    date:
+                        "20 August 2026",
+
+                    image:
+                        "images/article-industrial-components.webp",
+
+                    summary:
+                        "Key factors businesses should consider when selecting industrial components and suppliers.",
+
+                    content: `
+
+                        <p>
+                            Selecting the right industrial component
+                            requires more than simply comparing prices.
+                            Businesses should consider quality,
+                            application requirements, consistency and
+                            supplier reliability.
+                        </p>
+
+
+                        <h2>
+                            Understand the Application
+                        </h2>
+
+
+                        <p>
+                            Begin by clearly defining the operating
+                            environment and performance requirements
+                            of the component.
+                        </p>
+
+
+                        <h2>
+                            Consider Total Cost
+                        </h2>
+
+
+                        <p>
+                            The lowest purchase price does not always
+                            represent the lowest overall cost. Product
+                            reliability, replacement frequency and
+                            downtime can have a significant impact.
+                        </p>
+
+
+                        <blockquote>
+                            The right component is the one that delivers
+                            the required performance consistently.
+                        </blockquote>
+
+                    `
+
+                }
+
+
+            ],
+
+
+            /* ==========================================================
+               ==========================================================
+               CONTACT INFORMATION
+               ==========================================================
+               
+               ███████████████████████████████████████████████████████
+               
+               CHANGE YOUR CONTACT DETAILS HERE.
+               
+               ███████████████████████████████████████████████████████
+
+
+               PHONE
+               -----
+
+               Enter the phone number customers should use.
+
+               Example:
+
+                   "+91 98765 43210"
+
+
+               EMAIL
+               -----
+
+               Enter the business email address.
+
+               Example:
+
+                   "sales@yourcompany.com"
+
+
+               ADDRESS
+               -------
+
+               Enter your office/factory/business address.
+
+
+               DESCRIPTION
+               -----------
+
+               Short message shown in the Contact Us section.
+
+
+               ========================================================== */
+
+
+            contact: {
+
+                phone:
+                    "+91 98765 43210",
+
+                email:
+                    "sales@example.com",
+
+                address:
+                    "Industrial Area, Mumbai, Maharashtra, India",
+
+                description:
+                    "Have a product requirement or want to know more about our products? Get in touch with our team."
+
+            },
+
+
+            /* ==========================================================
+               ==========================================================
+               SOCIAL MEDIA
+               ==========================================================
+               
+               Add or remove social media profiles here.
+
+               The "name" is what visitors see.
+
+               The "url" is the destination.
+
+               Example:
+
+                   {
+                       name: "LinkedIn",
+                       url: "https://www.linkedin.com/company/example"
+                   }
+
+
+               You can add:
+
+                   LinkedIn
+                   Facebook
+                   Instagram
+                   YouTube
+                   X
+                   WhatsApp
+                   etc.
+
+
+               ========================================================== */
+
+
+            socialMedia: [
+
+
+                {
+                    name:
+                        "LinkedIn",
+
+                    url:
+                        "https://www.linkedin.com/company/example"
+
+                },
+
+
+                {
+                    name:
+                        "Instagram",
+
+                    url:
+                        "https://www.instagram.com/example"
+
+                },
+
+
+                {
+                    name:
+                        "Facebook",
+
+                    url:
+                        "https://www.facebook.com/example"
+
+                },
+
+
+                {
+                    name:
+                        "YouTube",
+
+                    url:
+                        "https://www.youtube.com/@example"
+
+                }
+
+
+            ]
+
+        };
+
+
+        /* ==============================================================
+           ==============================================================
+           13. APPLICATION FUNCTIONS
+           ==============================================================
+           
+           The sections below are website functionality.
+
+           WEBSITE OWNER:
+
+           Normally you do NOT need to edit anything below this point.
+
+           ==============================================================
+           ============================================================== */
+
+
+        /* ==============================================================
+           HTML SAFETY FUNCTION
+           ==============================================================
+
+           PURPOSE
+           -------
+           Safely displays configuration text inside generated HTML.
+
+           Do not edit.
+           ============================================================== */
+
+        function escapeHTML(value) {
+
+            return String(value)
+
+                .replace(/&/g, "&amp;")
+
+                .replace(/</g, "&lt;")
+
+                .replace(/>/g, "&gt;")
+
+                .replace(/"/g, "&quot;")
+
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* ==============================================================
+           INITIALISE COMPANY INFORMATION
+           ============================================================== */
+
+        function initializeCompanyInformation() {
+
+            const company =
+                WEBSITE_CONFIG.company;
+
+
+            document.title =
+                company.name +
+                " | Industrial Products";
+
+
+            document.getElementById(
+                "headerCompanyName"
+            ).textContent =
+                company.name;
+
+
+            document.getElementById(
+                "brandMark"
+            ).textContent =
+                company.shortName;
+
+
+            document.getElementById(
+                "footerCompanyName"
+            ).textContent =
+                company.name;
+
+
+            document.getElementById(
+                "footerCopyrightName"
+            ).textContent =
+                company.name;
+
+
+            document.getElementById(
+                "footerDescription"
+            ).textContent =
+                company.description;
+
+
+            document.getElementById(
+                "footerYear"
+            ).textContent =
+                new Date().getFullYear();
+
+        }
+
+
+        /* ==============================================================
+           INITIALISE HOMEPAGE
+           ============================================================== */
+
+        function initializeHomepage() {
+
+            const homepage =
+                WEBSITE_CONFIG.homepage;
+
+
+            document.getElementById(
+                "heroEyebrow"
+            ).textContent =
+                homepage.eyebrow;
+
+
+            document.getElementById(
+                "heroTitle"
+            ).textContent =
+                homepage.title;
+
+
+            document.getElementById(
+                "heroDescription"
+            ).textContent =
+                homepage.description;
+
+        }
+
+
+        /* ==============================================================
+           PRODUCT IMAGE HANDLING
+           ==============================================================
+
+           PURPOSE
+           -------
+           Displays the configured product image.
+
+           If an image does not exist or fails to load,
+           a simple placeholder is displayed instead.
+
+           This means a missing image will NOT break the website.
+
+           ============================================================== */
+
+        function createProductVisual(product) {
+
+            if (product.image) {
+
+                return `
+
+                    <img
+                        class="product-image"
+                        src="${escapeHTML(product.image)}"
+                        alt="${escapeHTML(product.name)}"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+                    >
+
+                    <div
+                        class="product-image-placeholder"
+                        style="display:none;"
+                        aria-hidden="true">
+
+                        ${escapeHTML(product.icon || "▣")}
+
+                    </div>
+
+                `;
+
+            }
+
+
+            return `
+
+                <div
+                    class="product-image-placeholder"
+                    aria-hidden="true">
+
+                    ${escapeHTML(product.icon || "▣")}
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* ==============================================================
+           PRODUCT CATALOGUE
+           ============================================================== */
+
+        function renderProducts(
+            selectedCategory = "All"
+        ) {
+
+            const grid =
+                document.getElementById(
+                    "productGrid"
+                );
+
+
+            const products =
+                WEBSITE_CONFIG.products;
+
+
+            const filteredProducts =
+
+                selectedCategory === "All"
+
+                    ? products
+
+                    : products.filter(
+                        product =>
+                            product.category ===
+                            selectedCategory
+                    );
+
+
+            grid.innerHTML =
+
+                filteredProducts
+                    .map(
+                        product => `
+
+                            <article
+                                class="product-card">
+
+                                ${createProductVisual(product)}
+
+                                <div
+                                    class="product-body">
+
+                                    <div
+                                        class="product-category">
+
+                                        ${escapeHTML(
+                                            product.category
+                                        )}
+
+                                    </div>
+
+
+                                    <h3
+                                        class="product-name">
+
+                                        ${escapeHTML(
+                                            product.name
+                                        )}
+
+                                    </h3>
+
+
+                                    <p
+                                        class="product-description">
+
+                                        ${escapeHTML(
+                                            product.description
+                                        )}
+
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                        `
+                    )
+                    .join("");
+
+
+            document.getElementById(
+                "productCount"
+            ).textContent =
+
+                filteredProducts.length +
+
+                (
+                    filteredProducts.length === 1
+                        ? " product"
+                        : " products"
+                );
+
+        }
+
+
+        /* ==============================================================
+           PRODUCT CATEGORY FILTER
+           ============================================================== */
+
+        function initializeProductFilters() {
+
+            const filterContainer =
+                document.getElementById(
+                    "categoryFilters"
+                );
+
+
+            const categories = [
+
+                "All",
+
+                ...new Set(
+                    WEBSITE_CONFIG.products
+                        .map(
+                            product =>
+                                product.category
+                        )
+                )
+
+            ];
+
+
+            filterContainer.innerHTML =
+
+                categories
+                    .map(
+                        category => `
+
+                            <button
+                                type="button"
+                                class="
+                                    filter-button
+                                    ${category === "All"
+                                        ? "active"
+                                        : ""}
+                                "
+                                data-category="${escapeHTML(category)}">
+
+                                ${escapeHTML(category)}
+
+                            </button>
+
+                        `
+                    )
+                    .join("");
+
+
+            filterContainer.addEventListener(
+                "click",
+                function(event) {
+
+                    const button =
+                        event.target.closest(
+                            "[data-category]"
+                        );
+
+
+                    if (!button) {
+                        return;
+                    }
+
+
+                    document
+                        .querySelectorAll(
+                            ".filter-button"
+                        )
+                        .forEach(
+                            item =>
+                                item.classList.remove(
+                                    "active"
+                                )
+                        );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    renderProducts(
+                        button.dataset.category
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ==============================================================
+           ARTICLE LIST
+           ============================================================== */
+
+        function renderArticles() {
+
+            const articleGrid =
+                document.getElementById(
+                    "articleGrid"
+                );
+
+
+            articleGrid.innerHTML =
+
+                WEBSITE_CONFIG.articles
+                    .map(
+                        (article, index) => `
+
+                            <article
+                                class="article-card">
+
+
+                                <img
+                                    class="article-image"
+                                    src="${escapeHTML(article.image)}"
+                                    alt="${escapeHTML(article.title)}"
+                                    loading="lazy"
+                                    onerror="this.style.display='none';"
+                                >
+
+
+                                <div
+                                    class="article-content">
+
+
+                                    <div
+                                        class="article-date">
+
+                                        ${escapeHTML(
+                                            article.category
+                                        )}
+
+                                        ·
+
+                                        ${escapeHTML(
+                                            article.date
+                                        )}
+
+                                    </div>
+
+
+                                    <h3
+                                        class="article-title">
+
+                                        ${escapeHTML(
+                                            article.title
+                                        )}
+
+                                    </h3>
+
+
+                                    <p
+                                        class="article-summary">
+
+                                        ${escapeHTML(
+                                            article.summary
+                                        )}
+
+                                    </p>
+
+
+                                    <a
+                                        href="#articleReader"
+                                        class="article-link"
+                                        data-article-index="${index}">
+
+                                        Read Article →
+
+                                    </a>
+
+
+                                </div>
+
+                            </article>
+
+                        `
+                    )
+                    .join("");
+
+        }
+
+
+        /* ==============================================================
+           ARTICLE READER
+           ==============================================================
+
+           PURPOSE
+           -------
+           Displays the complete article.
+
+           ============================================================= */
+
+        function openArticle(index) {
+
+            const article =
+                WEBSITE_CONFIG.articles[index];
+
+
+            if (!article) {
+                return;
+            }
+
+
+            document.getElementById(
+                "readerCategory"
+            ).textContent =
+                article.category;
+
+
+            document.getElementById(
+                "readerTitle"
+            ).textContent =
+                article.title;
+
+
+            document.getElementById(
+                "readerDate"
+            ).textContent =
+                article.date;
+
+
+            const image =
+                document.getElementById(
+                    "readerImage"
+                );
+
+
+            if (article.image) {
+
+                image.src =
+                    article.image;
+
+                image.alt =
+                    article.title;
+
+                image.style.display =
+                    "block";
+
+            } else {
+
+                image.style.display =
+                    "none";
+
+            }
+
+
+            /*
+                IMPORTANT:
+
+                The article content is intentionally inserted
+                as HTML because the business owner is expected
+                to write article content using HTML tags.
+
+                Example:
+
+                    <p>Paragraph</p>
+                    <h2>Heading</h2>
+                    <ul>...</ul>
+            */
+
+            document.getElementById(
+                "readerContent"
+            ).innerHTML =
+                article.content;
+
+
+            const reader =
+                document.getElementById(
+                    "articleReader"
+                );
+
+
+            reader.classList.add(
+                "active"
+            );
+
+
+            reader.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* ==============================================================
+           ARTICLE EVENT HANDLING
+           ============================================================== */
+
+        document.getElementById(
+            "articleGrid"
+        ).addEventListener(
+            "click",
+            function(event) {
+
+                const link =
+                    event.target.closest(
+                        "[data-article-index]"
+                    );
+
+
+                if (!link) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                openArticle(
+                    Number(
+                        link.dataset.articleIndex
+                    )
+                );
+
+            }
+        );
+
+
+        /* ==============================================================
+           CLOSE ARTICLE
+           ============================================================== */
+
+        document.getElementById(
+            "articleBackButton"
+        ).addEventListener(
+            "click",
+            function() {
+
+                document.getElementById(
+                    "articleReader"
+                ).classList.remove(
+                    "active"
+                );
+
+
+                document.getElementById(
+                    "articles"
+                ).scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /* ==============================================================
+           CONTACT INFORMATION
+           ============================================================== */
+
+        function initializeContactInformation() {
+
+            const contact =
+                WEBSITE_CONFIG.contact;
+
+
+            document.getElementById(
+                "contactDescription"
+            ).textContent =
+                contact.description;
+
+
+            document.getElementById(
+                "contactPhone"
+            ).textContent =
+                contact.phone;
+
+
+            document.getElementById(
+                "contactPhone"
+            ).href =
+                "tel:" +
+                contact.phone.replace(
+                    /[^+\d]/g,
+                    ""
+                );
+
+
+            document.getElementById(
+                "contactEmail"
+            ).textContent =
+                contact.email;
+
+
+            document.getElementById(
+                "contactEmail"
+            ).href =
+                "mailto:" +
+                contact.email;
+
+
+            document.getElementById(
+                "contactAddress"
+            ).textContent =
+                contact.address;
+
+
+            document.getElementById(
+                "footerEmail"
+            ).textContent =
+                contact.email;
+
+
+            document.getElementById(
+                "footerPhone"
+            ).textContent =
+                contact.phone;
+
+
+            document.getElementById(
+                "emailContactButton"
+            ).href =
+                "mailto:" +
+                contact.email;
+
+        }
+
+
+        /* ==============================================================
+           SOCIAL MEDIA LINKS
+           ============================================================== */
+
+        function initializeSocialMedia() {
+
+            const container =
+                document.getElementById(
+                    "socialLinks"
+                );
+
+
+            container.innerHTML =
+
+                WEBSITE_CONFIG.socialMedia
+                    .map(
+                        social => `
+
+                            <a
+                                class="social-link"
+                                href="${escapeHTML(social.url)}"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                ${escapeHTML(social.name)}
+
+                            </a>
+
+                        `
+                    )
+                    .join("");
+
+        }
+
+
+        /* ==============================================================
+           INITIALISE WEBSITE
+           ==============================================================
+
+           This function starts the website.
+
+           It is intentionally kept at the bottom so that all
+           functions have already been defined before execution.
+
+           ============================================================= */
+
+        function initializeWebsite() {
+
+            initializeCompanyInformation();
+
+            initializeHomepage();
+
+            initializeProductFilters();
+
+            renderProducts();
+
+            renderArticles();
+
+            initializeContactInformation();
+
+            initializeSocialMedia();
+
+        }
+
+
+        /* ==============================================================
+           START WEBSITE
+           ============================================================== */
+
+        initializeWebsite();
+
+
+    </script>
+
+
+</body>
+
+</html>
+
